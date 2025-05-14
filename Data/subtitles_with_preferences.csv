@@ -1,0 +1,11 @@
+en,es,candidates,bleu_scores,preferred_idx
+Hello world,Hola mundo,"['Hola mundo', 'Hola mundo', 'Hola mundo']","[1.0, 1.0, 1.0]",0
+Good morning,Buenos días,"['Buenos días.', 'Buenos días.', 'Buenos días.']","[1.0547686614863434e-154, 1.0547686614863434e-154, 1.0547686614863434e-154]",0
+Thank you,Gracias,"['Gracias.', 'Gracias.', 'Gracias.']","[0, 0, 0]",0
+I love movies,Me encantan las películas,"['Me encantan las películas.', 'Me encantan las películas.', 'Me encantan las películas.']","[0.7071067811865475, 0.7071067811865475, 0.7071067811865475]",0
+See you later,Hasta luego,"['Hasta luego.', 'Hasta luego.', 'Hasta luego.']","[1.0547686614863434e-154, 1.0547686614863434e-154, 1.0547686614863434e-154]",0
+What a great show,¡Qué gran espectáculo!,"['¡Qué gran espectáculo!', '¡Qué gran espectáculo!', '¡Qué gran espectáculo!']","[1.0, 1.0, 1.0]",0
+Enjoy your day,Disfruta tu día,"['Disfruta de tu día', 'Disfruta de tu día', 'Disfruta de tu día']","[0.49999999999999994, 0.49999999999999994, 0.49999999999999994]",0
+Let's watch together,Miremos juntos,"['Vamos a ver juntos.', 'Vamos a ver juntos.', 'Vamos a ver juntos.']","[0, 0, 0]",0
+Amazing story,Historia increíble,"['Una historia increíble', 'Una historia increíble', 'Una historia increíble']","[8.612150057732663e-155, 8.612150057732663e-155, 8.612150057732663e-155]",0
+Have fun,¡Diviértete!,"['Diviértete.', 'Diviértete.', 'Diviértete.']","[0, 0, 0]",0
