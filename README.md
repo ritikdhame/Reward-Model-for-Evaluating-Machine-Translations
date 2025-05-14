@@ -65,7 +65,7 @@ You can run this project either in **Google Colab** or **locally**.
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-username/reward-model-for-translation.git
+   git clone https://github.com/ritikdhame/Reward-Model-for-Evaluating-Machine-Translations
    cd reward-model-for-translation
    ```
 
@@ -94,7 +94,7 @@ You can run this project either in **Google Colab** or **locally**.
 - **Reward Model Accuracy**: Achieved an accuracy of **[insert your accuracy, e.g., 0.50]** on a test set of 2 samples (from an initial dataset of 10 rows).
 - **Visualization**:  
   `reward_scores_distribution.png` shows the distribution of reward scores, offering insights into the model’s capability to differentiate translation quality.
-
+![alt text](reward_scores_distribution.png)
 ---
 
 ## ⚙️ Technical Details
