@@ -132,4 +132,4 @@ This project is licensed under the **MIT License**. See the `LICENSE` file for d
 
 ## 📬 Contact
 
-For questions or collaboration, reach out via **[your email or GitHub profile link]**.
+For questions or collaboration, reach out via ritikdhame5@gmail.com or follow me at https://www.linkedin.com/in/ritikdhame/
