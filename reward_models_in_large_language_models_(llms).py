@@ -9,9 +9,9 @@ Original file is located at
 **Step 1: Getting Dependencies**
 """
 
-!python -m venv reward_env
-!source reward_env/bin/activate  # On Windows: reward_env\Scripts\activate
-!pip install torch transformers datasets pandas numpy matplotlib seaborn
+# !python -m venv reward_env
+# !source reward_env/bin/activate  # On Windows: reward_env\Scripts\activate
+# !pip install torch transformers datasets pandas numpy matplotlib seaborn
 
 """**Step 2: Prepare the Dataset**
 
@@ -19,6 +19,7 @@ We’ll use a small, publicly available dataset of movie subtitles. For this exa
 """
 
 import pandas as pd
+import ast
 
 # Assuming a small sample dataset is uploaded to Colab (e.g., via Files upload)
 # Upload a file named 'sample_en_es.csv' with columns 'en' and 'es' to Colab's file system
@@ -88,7 +89,7 @@ df = pd.read_csv("/content/subtitles_with_candidates.csv")
 def compute_bleu_scores(row):
     reference = row["es"].split()
     scores = []
-    for candidate in eval(row["candidates"]):  # Convert string representation of list back to list
+    for candidate in ast.literal_eval(row["candidates"]):  # Convert string representation of list back to list safely
         candidate_tokens = candidate.split()
         score = sentence_bleu([reference], candidate_tokens, weights=(0.5, 0.5, 0, 0))  # Bigram BLEU
         scores.append(score)
@@ -131,7 +132,7 @@ class RewardDataset(torch.utils.data.Dataset):
         row_idx = idx // 3
         candidate_idx = idx % 3
         row = self.df.iloc[row_idx]
-        candidate = eval(row["candidates"])[candidate_idx]  # Convert string representation back to list
+        candidate = ast.literal_eval(row["candidates"])[candidate_idx]  # Convert string representation back to list safely
         label = 1.0 if candidate_idx == row["preferred_idx"] else 0.0  # Binary reward
 
         encoding = reward_tokenizer(
@@ -198,7 +199,7 @@ reward_model = BertForSequenceClassification.from_pretrained("/content/reward_mo
 # Function to score translations using the reward model
 def score_translations(candidates):
     scores = []
-    for candidate in eval(candidates):  # Convert string representation back to list
+    for candidate in ast.literal_eval(candidates):  # Convert string representation back to list safely
         inputs = reward_tokenizer(candidate, return_tensors="pt", truncation=True, padding=True)
         with torch.no_grad():
             outputs = reward_model(**inputs).logits
